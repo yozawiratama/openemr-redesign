@@ -29,8 +29,8 @@ module.exports = {
           "dark-second": "#242526",
           "dark-third": "#3A3B3C",
           "dark-txt": "#B8BBBF",
-          primary: "#9C6039",
-          primarydark: '#873e23'
+          primary: "#38A3A5",
+          primarydark: '#22577A'
         },
         backgroundColor: (theme) => ({
           ...theme('colors'),

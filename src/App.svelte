@@ -1,9 +1,20 @@
 <script lang="ts">
+	import Login from "./templates/Login.svelte";
+	import ForgotPassword from "./templates/ForgotPassword.svelte";
+	import Main from "./templates/Main.svelte";
 	export let name: string;
+
+	let state = "MAIN";
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
+	{#if state == "LOGIN"}
+		<Login />
+	{:else if state == "FORGOT_PASSWORD"}
+		<ForgotPassword />
+	{:else}
+		<Main />
+	{/if}
 </main>
 
 <style global lang="postcss">
