@@ -58,6 +58,24 @@
 {/each}
 
 <div>
+    {#each $pages.filter(it => it.lock) as page}
+        {#if page.value != currentPage?.value}
+            {#if page?.value == "CALENDAR"}
+                <Calendar />
+            {:else if page?.value == "DASHBOARD"}
+                <Dashboard />
+            {:else if page?.value == "PATIENTS"}
+                <PatientList />
+            {:else if page?.value == "NEW_PATIENT"}
+                <PatientNew />
+            {:else if page?.value == "PATIENT_DETAIL"}
+                <PatientDetail />
+            {/if}
+        {/if}
+    {/each}
+</div>
+
+<div>
     {#if currentPage?.value == "CALENDAR"}
         <Calendar />
     {:else if currentPage?.value == "DASHBOARD"}
