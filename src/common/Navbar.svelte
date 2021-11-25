@@ -1,10 +1,7 @@
 <script>
-    import { createEventDispatcher } from 'svelte';
-
-    const dispatch = createEventDispatcher();
+    import { pages } from '../store';
 
     let open = true;
-    let state = "";
     let menus = [
         {
             text: "Dashboard",
@@ -70,7 +67,9 @@
     ];
 
     function handleClick(menu){
-        dispatch('menu-click', menu);
+        menu.lock = false;
+        let temp = [...new Set([...$pages, menu])];
+        pages.set(temp)
     }
 </script>
 
