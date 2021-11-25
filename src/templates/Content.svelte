@@ -53,14 +53,14 @@
                 on:click={() => (currentPage = page)}
                 class="py-2 pl-6 pr-4 block  focus:outline-none {currentPage.value ==
                     page.value && !page.lock
-                    ? 'text-blue-500 border-b-2 font-medium border-blue-500'
+                    ? 'text-primary border-b-2 font-medium border-primary'
                     : ''} {page.lock
-                    ? 'bg-blue-500 text-white'
-                    : 'text-gray-600 hover:text-blue-500'}"
+                    ? 'bg-primary text-white'
+                    : 'text-gray-600 hover:text-primary'}"
             >
                 <span>{page.text}</span>
                 <span
-                    class="ml-1 hover:bg-blue-900 hover:text-white rounded"
+                    class="ml-1 hover:bg-primarydark hover:text-white rounded"
                     on:click={() => {
                         handleLockTab(page);
                     }}
@@ -72,7 +72,7 @@
                     {/if}
                 </span>
                 <span
-                    class="ml-1 hover:bg-blue-900 hover:text-white rounded"
+                    class="ml-1 hover:bg-primarydark hover:text-white rounded"
                     on:click={() => {
                         handleCloseTab(page);
                     }}><i class="bx bx-x" /></span

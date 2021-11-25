@@ -19,11 +19,11 @@
             <Card title="Inpatients" content={156} />
         </div>
     {/if}
-    <div class="relative py-2 px-4">
+    <div class="py-2 px-4">
         <input
             type="search"
             class="bg-purple-white shadow rounded border-0 p-3 w-full"
-            placeholder="Search by name..."
+            placeholder="Search patient / clinic / invoice / visit ..."
         />
     </div>
 </div>
