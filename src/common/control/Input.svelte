@@ -3,7 +3,7 @@
   const dispatch = createEventDispatcher();
   import Cleave from "cleave.js";
   import "cleave.js/dist/addons/cleave-phone.id";
-  import Util from "../Util/Utility.ts";
+  import Util from "../../Utility";
   import { onMount } from "svelte";
 
   export let label = "";

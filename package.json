@@ -11,6 +11,8 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
+    "@rollup/plugin-typescript": "^8.0.0",
+    "@tsconfig/svelte": "^2.0.0",
     "autoprefixer": "^9.8.6",
     "postcss": "8",
     "postcss-nesting": "^7.0.1",
@@ -24,15 +26,14 @@
     "svelte-preprocess": "^4.0.0",
     "tailwind-scrollbar": "^1.3.1",
     "tailwindcss": "^2.0.3",
-    "@rollup/plugin-typescript": "^8.0.0",
-    "typescript": "^4.0.0",
     "tslib": "^2.0.0",
-    "@tsconfig/svelte": "^2.0.0"
+    "typescript": "^4.0.0"
   },
   "dependencies": {
-    "sirv-cli": "^1.0.0",
+    "cleave.js": "^1.6.0",
     "date-fns": "^2.22.1",
     "flatpickr": "^4.6.9",
+    "sirv-cli": "^1.0.0",
     "svelte-chartjs": "^1.0.1",
     "svelte-forms": "^1.1.51",
     "svelte-tabs": "^1.1.0"

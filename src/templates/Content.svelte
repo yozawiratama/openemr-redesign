@@ -15,6 +15,7 @@
             currentPage = val[0];
             isFirst = false;
         }
+        console.log(val)
     });
 
     function handleCloseTab(page) {

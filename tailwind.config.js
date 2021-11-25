@@ -5,7 +5,7 @@ module.exports = {
     },
     purge: {
       content: ["./src/**/*.svelte"],
-      enabled: false,
+      enabled: true,
       defaultExtractor: (content) => {
         const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [];
         const broadMatchesWithoutTrailingSlash = broadMatches.map((match) =>

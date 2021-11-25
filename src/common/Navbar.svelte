@@ -5,6 +5,7 @@
     let open = true;
 
     function handleClick(menu) {
+        console.log(menu)
         menu.lock = false;
         let temp = [...new Set([...$pages, menu])];
         pages.set(temp);
@@ -20,7 +21,7 @@
                 <a
                     on:click|preventDefault={() => {}}
                     href="#"
-                    class="text-lg font-semibold tracking-widest text-white uppercase rounded-lg"
+                    class="font-semibold tracking-widest text-white uppercase rounded-lg"
                     >Open EMR</a
                 >
                 <button
@@ -53,28 +54,45 @@
                     : 'hidden'}"
             >
                 <a
-                    class="px-2 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-white focus:text-gray-900 hover:bg-primarydark focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    on:click|preventDefault={() =>
+                        handleClick({
+                            value: "CALENDAR",
+                        })}
+                    class="px-2 py-2 mt-2 font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-2 hover:text-white focus:text-gray-900 hover:bg-primarydark focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                     href="#"
                 >
                     <i class="bx bxs-calendar" />
                 </a>
+                <a
+                    on:click|preventDefault={() =>
+                        handleClick({
+                            text: 'Dashboard',
+                            value: "DASHBOARD",
+                        })}
+                    class="px-2 py-2 mt-2 font-semibold bg-transparent rounded-lg md:mt-0 md:ml-2 hover:text-white focus:text-gray-900 hover:bg-primarydark focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#"
+                >
+                    <i class="bx bxs-dashboard" />
+                </a>
+                <a
+                    on:click|preventDefault={() =>
+                        handleClick({
+                            value: "MESSAGES",
+                        })}
+                    class="px-2 py-2 mt-2 font-semibold bg-transparent rounded-lg md:mt-0 md:ml-2 hover:text-white focus:text-gray-900 hover:bg-primarydark focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#"
+                >
+                    <i class="bx bxs-message-detail" />
+                </a>
+
                 {#each menus as menu}
                     {#if menu.child && menu.child.length > 0}
                         <div class="group inline-block relative">
                             <button
-                                class="flex flex-row group-hover:text-white group-hover:bg-primarydark border-0 items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-2 hover:text-white hover:bg-primarydark"
+                                class="flex flex-row group-hover:text-white group-hover:bg-primarydark border-0 items-center w-full px-4 py-2 mt-2 text-xs font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-2 hover:text-white hover:bg-primarydark"
                             >
                                 <span>{menu.text}</span>
-                                <svg
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"
-                                    ><path
-                                        fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"
-                                    /></svg
-                                >
+                                <i class="bx bx-chevron-down" />
                             </button>
                             <div
                                 class="absolute hidden group-hover:block text-gray-900 right-0 w-full md:max-w-screen-sm md:w-screen origin-top-right"
@@ -103,7 +121,7 @@
                                                     <p class="font-semibold">
                                                         {child.text}
                                                     </p>
-                                                    <p class="text-sm">
+                                                    <p class="text-xs">
                                                         {child.desc}
                                                     </p>
                                                 </div>
@@ -114,16 +132,22 @@
                             </div>
                         </div>
                     {:else}
-                        <a
+                        <!-- <a
                             on:click|preventDefault={() => handleClick(menu)}
-                            class="px-2 py-2 mt-2 text-sm text-white font-semibold bg-transparent rounded-lg md:mt-0 md:ml-2"
+                            class="px-2 py-2 mt-2 text-xs text-white font-semibold bg-transparent rounded-lg md:mt-0 md:ml-2"
                             href="#">{menu.text}</a
+                        > -->
+                        <button
+                            on:click|preventDefault={() => handleClick(menu)}
+                            class="flex flex-row group-hover:text-white group-hover:bg-primarydark border-0 items-center w-full px-4 py-2 mt-2 text-xs font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-2 hover:text-white hover:bg-primarydark"
                         >
+                            <span>{menu.text}</span>
+                        </button>
                     {/if}
                 {/each}
                 <div class="group inline-block absolute right-4">
                     <button
-                        class="flex flex-row group-hover:text-white group-hover:bg-primarydark border-0 items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-2 hover:text-white hover:bg-primarydark"
+                        class="flex flex-row group-hover:text-white group-hover:bg-primarydark border-0 items-center w-full px-4 py-2 mt-2 text-xs font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-2 hover:text-white hover:bg-primarydark"
                     >
                         <span><i class="bx bx-user" /> Billy Smith</span>
                         <svg
