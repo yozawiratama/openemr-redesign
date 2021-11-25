@@ -1,3 +1,5 @@
-<h1>Navbar</h1>
-
+<script>
+    import Navbar from '../common/Navbar.svelte'
+</script>
+<Navbar />
 <slot />
