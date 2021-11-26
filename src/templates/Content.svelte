@@ -37,8 +37,8 @@
 
 
 
-<div class="bg-white">
-    <nav class="flex flex-col sm:flex-row">
+<div>
+    <nav class="flex flex-col sm:flex-row bg-white border-b border-gray-300">
         <button
             on:click={() => openInfoPath.set(!$openInfoPath)}
             class="text-gray-600 py-2 px-6 block hover:text-blue-500 focus:outline-none "
@@ -50,7 +50,7 @@
             {/if}
         </button>
         {#each $pages as page}
-            <div
+            <!-- <div
                 on:click={() => (currentPage = page)}
                 class="py-2 pl-6 pr-4 block  focus:outline-none {currentPage.value ==
                     page.value && !page.lock
@@ -58,6 +58,15 @@
                     : ''} {page.lock
                     ? 'bg-primary text-white'
                     : 'text-gray-600 hover:text-primary'}"
+            > -->
+            <div
+                on:click={() => (currentPage = page)}
+                class="py-2 pl-6 pr-4 block  focus:outline-none {currentPage.value ==
+                    page.value && !page.lock
+                    ? 'tab-active bg-gray-100 font-bold'
+                    : ''} {page.lock
+                    ? 'tab-locked tab bg-gray-100 font-bold'
+                    : 'tab'}"
             >
                 <span>{page.text}</span>
                 <span
@@ -83,7 +92,7 @@
     </nav>
 </div>
 
-<div class="flex flex-row bg-gray-50">
+<div class="flex flex-row bg-gray-100 gap-4 p-4 container-dashboard">
     {#each $pages.filter((it) => it.lock) as page}
         {#if page.value != currentPage?.value}
             {#if page?.value == "CALENDAR"}

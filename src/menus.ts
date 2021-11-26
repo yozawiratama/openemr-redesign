@@ -17,9 +17,14 @@ const menus = [
                 desc: "All Patients",
             },
             {
-                text: "New",
+                text: "New Patient",
                 value: "NEW_PATIENT",
                 desc: "Make new Patients",
+            },
+            {
+                text: "Detail Patient",
+                value: "PATIENT_DETAIL",
+                desc: "Detail Patient"
             },
             {
                 text: "Visits",

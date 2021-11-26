@@ -10,7 +10,7 @@
     });
 </script>
 
-<div class="bg-gray-100">
+<div class="bg-white">
     {#if visible}
         <div transition:fade class="p-4 grid grid-cols-2 md:grid-cols-4 gap-4 ">
             <Card title="Revenue" content={15000000} />
@@ -22,7 +22,7 @@
     <div class="py-2 px-4">
         <input
             type="search"
-            class="bg-purple-white shadow rounded border-0 p-3 w-full"
+            class="bg-purple-white shadow rounded border-0 p-3 w-full border border-green-500"
             placeholder="Search patient / clinic / invoice / visit ..."
         />
     </div>

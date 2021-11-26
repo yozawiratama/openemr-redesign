@@ -12,7 +12,7 @@
     }
 </script>
 
-<div class="antialiased bg-primary">
+<div class="antialiased bg-primary relative z-10">
     <div class="w-full text-white bg-primary">
         <div
             class="flex flex-col px-4 mx-1 md:items-center md:justify-between md:flex-row md:px-6 lg:px-8"
