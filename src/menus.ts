@@ -17,7 +17,7 @@ const menus = [
                 desc: "All Patients",
             },
             {
-                text: "New",
+                text: "New Patient",
                 value: "NEW_PATIENT",
                 desc: "Make new Patients",
             },
