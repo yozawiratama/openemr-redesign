@@ -92,7 +92,20 @@
     </nav>
 </div>
 
+<!-- <div class="grid grid-cols-{$pages.filter(it => it.lock).length} bg-gray-50"> -->
 <div class="flex flex-row bg-gray-100 gap-4 p-4 container-dashboard">
+    
+    {#if currentPage?.value == "CALENDAR"}
+        <Calendar />
+    {:else if currentPage?.value == "DASHBOARD"}
+        <Dashboard />
+    {:else if currentPage?.value == "PATIENTS"}
+        <PatientList />
+    {:else if currentPage?.value == "NEW_PATIENT"}
+        <PatientNew />
+    {:else if currentPage?.value == "PATIENT_DETAIL"}
+        <PatientDetail />
+    {/if}
     {#each $pages.filter((it) => it.lock) as page}
         {#if page.value != currentPage?.value}
             {#if page?.value == "CALENDAR"}
@@ -108,17 +121,6 @@
             {/if}
         {/if}
     {/each}
-    {#if currentPage?.value == "CALENDAR"}
-        <Calendar />
-    {:else if currentPage?.value == "DASHBOARD"}
-        <Dashboard />
-    {:else if currentPage?.value == "PATIENTS"}
-        <PatientList />
-    {:else if currentPage?.value == "NEW_PATIENT"}
-        <PatientNew />
-    {:else if currentPage?.value == "PATIENT_DETAIL"}
-        <PatientDetail />
-    {/if}
 </div>
 
 <!-- 
